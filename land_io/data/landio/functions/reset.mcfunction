@@ -16,6 +16,7 @@ tag @a remove running
 tag @a remove filled0
 tag @a remove filled1
 tag @a remove dead
+tag @a remove ticked
 
 #Create scoreboard objective
 scoreboard objectives add game_time dummy

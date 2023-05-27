@@ -7,7 +7,7 @@ execute unless block ~ ~-1 ~ orange_concrete_powder run function landio:orange/s
 execute if entity @s[tag=running] unless block ~ ~-1 ~ orange_concrete_powder run function landio:orange/place_updates
 
 #If the player is starting to run, mark last location it with an armor stand and set status to running
-execute if entity @s[tag=!running] unless block ~ ~-1 ~ orange_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Marker: 1b, Invisible: 1b, Tags: ["orange_last_pos"]}
+execute if entity @s[tag=!running] unless block ~ ~-1 ~ orange_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Tags: ["orange_last_pos"]}
 
 #Update the block below the player if it is not concrete
 execute unless block ~ ~-1 ~ orange_concrete unless block ~ ~-1 ~ orange_concrete_powder run setblock ~ ~-1 ~ orange_concrete_powder

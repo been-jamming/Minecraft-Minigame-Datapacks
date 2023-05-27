@@ -7,7 +7,7 @@ execute unless block ~ ~-1 ~ red_concrete_powder run function landio:red/steal
 execute if entity @s[tag=running] unless block ~ ~-1 ~ red_concrete_powder run function landio:red/place_updates
 
 #If the player is starting to run, mark last location it with an armor stand and set status to running
-execute if entity @s[tag=!running] unless block ~ ~-1 ~ red_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Marker: 1b, Invisible: 1b, Tags: ["red_last_pos"]}
+execute if entity @s[tag=!running] unless block ~ ~-1 ~ red_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Tags: ["red_last_pos"]}
 
 #Update the block below the player if it is not concrete
 execute unless block ~ ~-1 ~ red_concrete unless block ~ ~-1 ~ red_concrete_powder run setblock ~ ~-1 ~ red_concrete_powder

@@ -7,7 +7,7 @@ execute unless block ~ ~-1 ~ light_blue_concrete_powder run function landio:aqua
 execute if entity @s[tag=running] unless block ~ ~-1 ~ light_blue_concrete_powder run function landio:aqua/place_updates
 
 #If the player is starting to run, mark last location it with an armor stand and set status to running
-execute if entity @s[tag=!running] unless block ~ ~-1 ~ light_blue_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Marker: 1b, Invisible: 1b, Tags: ["aqua_last_pos"]}
+execute if entity @s[tag=!running] unless block ~ ~-1 ~ light_blue_concrete align xyz run summon marker ~0.5 ~ ~0.5 {Tags: ["aqua_last_pos"]}
 
 #Update the block below the player if it is not concrete
 execute unless block ~ ~-1 ~ light_blue_concrete unless block ~ ~-1 ~ light_blue_concrete_powder run setblock ~ ~-1 ~ light_blue_concrete_powder

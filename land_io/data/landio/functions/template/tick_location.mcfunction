@@ -7,7 +7,7 @@ execute unless block ~ ~-1 ~ PATH run function landio:TEAM/steal
 execute if entity @s[tag=running] unless block ~ ~-1 ~ PATH run function landio:TEAM/place_updates
 
 #If the player is starting to run, mark last location it with an armor stand and set status to running
-execute if entity @s[tag=!running] unless block ~ ~-1 ~ FILL align xyz run summon marker ~0.5 ~ ~0.5 {Marker: 1b, Invisible: 1b, Tags: ["TEAM_last_pos"]}
+execute if entity @s[tag=!running] unless block ~ ~-1 ~ FILL align xyz run summon marker ~0.5 ~ ~0.5 {Tags: ["TEAM_last_pos"]}
 
 #Update the block below the player if it is not concrete
 execute unless block ~ ~-1 ~ FILL unless block ~ ~-1 ~ PATH run setblock ~ ~-1 ~ PATH
