@@ -17,6 +17,13 @@ tag @a remove filled0
 tag @a remove filled1
 tag @a remove dead
 
+#Create scoreboard objective
+scoreboard objectives add game_time dummy
+scoreboard objectives add constants dummy
+scoreboard players set # game_time 3600
+scoreboard players set #1200 constants 1200
+scoreboard players set #20 constants 20
+
 #Create teams
 team add red {"text": "Red", "color": "red"}
 team add orange {"text": "Orange", "color": "gold"}

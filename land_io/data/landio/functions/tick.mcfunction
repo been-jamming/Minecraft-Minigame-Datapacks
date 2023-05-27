@@ -49,3 +49,18 @@ function landio:aqua/respawn
 function landio:blue/respawn
 function landio:pink/respawn 
 
+#Compute the number of minutes and seconds left in the game
+scoreboard players operation #minutes game_time = # game_time
+scoreboard players operation #minutes game_time /= #1200 constants
+scoreboard players operation #seconds game_time = # game_time
+scoreboard players operation #seconds game_time %= #1200 constants
+scoreboard players operation #seconds game_time /= #20 constants
+
+#Display the time left at the bottom of the screen
+execute unless score # game_time matches ..600 if score #seconds game_time matches 10.. run title @a actionbar [{"score": {"name": "#minutes", "objective": "game_time"}, "color": "yellow"}, {"text": ":", "color": "yellow"}, {"score": {"name": "#seconds", "objective": "game_time"}, "color": "yellow"}]
+execute unless score # game_time matches ..600 if score #seconds game_time matches ..9 run title @a actionbar [{"score": {"name": "#minutes", "objective": "game_time"}, "color": "yellow"}, {"text": ":0", "color": "yellow"}, {"score": {"name": "#seconds", "objective": "game_time"}, "color": "yellow"}]
+execute if score # game_time matches ..600 if score #seconds game_time matches 10.. run title @a actionbar [{"score": {"name": "#minutes", "objective": "game_time"}, "color": "red"}, {"text": ":", "color": "red"}, {"score": {"name": "#seconds", "objective": "game_time"}, "color": "red"}]
+execute if score # game_time matches ..600 if score #seconds game_time matches ..9 run title @a actionbar [{"score": {"name": "#minutes", "objective": "game_time"}, "color": "red"}, {"text": ":0", "color": "red"}, {"score": {"name": "#seconds", "objective": "game_time"}, "color": "red"}]
+
+#Decrement the timer
+scoreboard players remove # game_time 1

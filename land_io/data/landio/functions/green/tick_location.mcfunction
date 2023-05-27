@@ -1,22 +1,7 @@
 #Functions of main green loop executed at ground level
 
 #Steal territory from other teams if the player killed them
-execute if block ~ ~-1 ~ red_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace red_concrete
-execute if block ~ ~-1 ~ red_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace red_concrete_powder
-execute if block ~ ~-1 ~ orange_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace orange_concrete
-execute if block ~ ~-1 ~ orange_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace orange_concrete_powder
-execute if block ~ ~-1 ~ yellow_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace yellow_concrete
-execute if block ~ ~-1 ~ yellow_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace yellow_concrete_powder
-execute if block ~ ~-1 ~ lime_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace lime_concrete
-execute if block ~ ~-1 ~ lime_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace lime_concrete_powder
-execute if block ~ ~-1 ~ green_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace green_concrete
-execute if block ~ ~-1 ~ green_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace green_concrete_powder
-execute if block ~ ~-1 ~ light_blue_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace light_blue_concrete
-execute if block ~ ~-1 ~ light_blue_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace light_blue_concrete_powder
-execute if block ~ ~-1 ~ blue_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace blue_concrete
-execute if block ~ ~-1 ~ blue_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace blue_concrete_powder
-execute if block ~ ~-1 ~ pink_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 green_concrete replace pink_concrete
-execute if block ~ ~-1 ~ pink_concrete_powder unless block ~ ~-1 ~ green_concrete_powder at @e[tag=corner] run fill ~ ~ ~ ~29 ~ ~29 white_concrete replace pink_concrete_powder
+execute unless block ~ ~-1 ~ green_concrete_powder run function landio:green/steal
 
 #If the player is running and is standing on a new block, place update armor stands
 execute if entity @s[tag=running] unless block ~ ~-1 ~ green_concrete_powder run function landio:green/place_updates
