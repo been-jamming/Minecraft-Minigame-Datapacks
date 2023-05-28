@@ -26,6 +26,14 @@ scoreboard players set #1200 constants 1200
 scoreboard players set #20 constants 20
 
 #Create teams
+team remove red
+team remove orange
+team remove yellow
+team remove lime
+team remove green
+team remove aqua
+team remove blue
+team remove pink
 team add red {"text": "Red", "color": "red"}
 team add orange {"text": "Orange", "color": "gold"}
 team add yellow {"text": "Yellow", "color": "yellow"}
