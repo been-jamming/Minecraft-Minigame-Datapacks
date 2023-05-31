@@ -13,8 +13,8 @@ execute if entity @s[tag=!running] unless block ~ ~-1 ~ lime_concrete align xyz 
 execute unless block ~ ~-1 ~ lime_concrete unless block ~ ~-1 ~ lime_concrete_powder run setblock ~ ~-1 ~ lime_concrete_powder
 
 #Check if the player should DIE
-execute at @p[gamemode=adventure, team=!lime] if block ~ ~-1 ~ lime_concrete_powder run function landio:lime/kill
-execute at @p[gamemode=adventure, team=!lime] if block ~ ~-2 ~ lime_concrete_powder run function landio:lime/kill
+execute at @a[gamemode=adventure, team=!lime, tag=!dead] if block ~ ~-1 ~ lime_concrete_powder run function landio:lime/kill
+execute at @a[gamemode=adventure, team=!lime, tag=!dead] if block ~ ~-2 ~ lime_concrete_powder run function landio:lime/kill
 
 #If the player is not standing on concrete, set their status to running and remove filled status
 execute unless block ~ ~-1 ~ lime_concrete run tag @s add running

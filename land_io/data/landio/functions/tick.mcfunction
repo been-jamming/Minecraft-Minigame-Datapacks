@@ -51,6 +51,29 @@ execute if entity @p[team=red, tag=!running, tag=!ticked] if entity @e[tag=rng1,
 #Restore the random number generation
 tag @e[tag=rng] remove rng_selection
 
+#For players who are not running, check again to see if they can steal territory
+execute as @p[team=red, tag=!running] at @s run function landio:red/steal_others
+execute as @p[team=orange, tag=!running] at @s run function landio:orange/steal_others
+execute as @p[team=yellow, tag=!running] at @s run function landio:yellow/steal_others
+execute as @p[team=lime, tag=!running] at @s run function landio:lime/steal_others
+execute as @p[team=green, tag=!running] at @s run function landio:green/steal_others
+execute as @p[team=aqua, tag=!running] at @s run function landio:aqua/steal_others
+execute as @p[team=blue, tag=!running] at @s run function landio:blue/steal_others
+execute as @p[team=pink, tag=!running] at @s run function landio:pink/steal_others
+
+#Compute the score of each player
+function landio:red/score
+function landio:orange/score
+function landio:yellow/score
+function landio:lime/score
+function landio:green/score
+function landio:aqua/score
+function landio:blue/score
+function landio:pink/score
+
+#Kill any player with a score of 0
+tag @a[gamemode=adventure, scores={score=0}] add dead
+
 #Respawn dead players
 function landio:red/respawn
 function landio:orange/respawn

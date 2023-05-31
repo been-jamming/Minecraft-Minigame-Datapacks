@@ -13,8 +13,8 @@ execute if entity @s[tag=!running] unless block ~ ~-1 ~ red_concrete align xyz r
 execute unless block ~ ~-1 ~ red_concrete unless block ~ ~-1 ~ red_concrete_powder run setblock ~ ~-1 ~ red_concrete_powder
 
 #Check if the player should DIE
-execute at @p[gamemode=adventure, team=!red] if block ~ ~-1 ~ red_concrete_powder run function landio:red/kill
-execute at @p[gamemode=adventure, team=!red] if block ~ ~-2 ~ red_concrete_powder run function landio:red/kill
+execute at @a[gamemode=adventure, team=!red, tag=!dead] if block ~ ~-1 ~ red_concrete_powder run function landio:red/kill
+execute at @a[gamemode=adventure, team=!red, tag=!dead] if block ~ ~-2 ~ red_concrete_powder run function landio:red/kill
 
 #If the player is not standing on concrete, set their status to running and remove filled status
 execute unless block ~ ~-1 ~ red_concrete run tag @s add running

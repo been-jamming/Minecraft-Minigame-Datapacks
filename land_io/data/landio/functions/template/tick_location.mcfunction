@@ -13,8 +13,8 @@ execute if entity @s[tag=!running] unless block ~ ~-1 ~ FILL align xyz run summo
 execute unless block ~ ~-1 ~ FILL unless block ~ ~-1 ~ PATH run setblock ~ ~-1 ~ PATH
 
 #Check if the player should DIE
-execute at @p[gamemode=adventure, team=!TEAM] if block ~ ~-1 ~ PATH run function landio:TEAM/kill
-execute at @p[gamemode=adventure, team=!TEAM] if block ~ ~-2 ~ PATH run function landio:TEAM/kill
+execute at @a[gamemode=adventure, team=!TEAM, tag=!dead] if block ~ ~-1 ~ PATH run function landio:TEAM/kill
+execute at @a[gamemode=adventure, team=!TEAM, tag=!dead] if block ~ ~-2 ~ PATH run function landio:TEAM/kill
 
 #If the player is not standing on concrete, set their status to running and remove filled status
 execute unless block ~ ~-1 ~ FILL run tag @s add running
